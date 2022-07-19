@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box; 
+}
+  ul {
+    list-style-type: none; 
+}
+.masonry {
+    position: relative;
+}
+.masonry__image{
+    position: absolute;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+
