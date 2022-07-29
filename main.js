@@ -2,7 +2,7 @@ function Masonry(selector, options) {
     let defaultOptions = {
         columnWidth: 200,
         autoresize: true || false
-    }
+    } 
     options = {...defaultOptions, ...options}
 
     let container  = document.querySelector(selector);
@@ -22,13 +22,13 @@ function Masonry(selector, options) {
     columnsArray.fill(0);
 
     for(var j = 0; j < imgsNodeList.length; j++) {
-        var minHeightIndx = getMinimalHeightIndex();
-        setCorrectPosition(j, minHeightIndx);
-        setNewColumnHeight(minHeightIndx,imgsNodeList[j].clientHeight);
+        var minHeightIndex = getMinimalHeightIndex();
+        setCorrectPosition(j, minHeightIndex);
+        setNewColumnHeight(minHeightIndex,imgsNodeList[j].clientHeight);
     }
 
     function getMinimalHeightIndex() {
-        return indexofMinHeight  = columnsArray.indexOf(Math.min(...columnsArray));
+        return  columnsArray.indexOf(Math.min(...columnsArray));
     }
 
 
@@ -52,8 +52,8 @@ function onResize(){
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function(){
         Masonry('.masonry', {autoresize:true})
-    },100)
+    },50)
     
 }
-new Masonry('.masonry', {autoresize:true})
+new Masonry('.masonry', {autoresize:true, columnWidth: 200})
 
